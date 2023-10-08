@@ -34,11 +34,10 @@ def itinerary():
     template, context = itinerary_view(app)
     return render_template(template, **context)
 
-@app.route('/travel')
-def travel():
-    template, context = travel_view(app)
+@app.route('/travel/<int:id_specie>')
+def travel(id_specie):
+    template, context = travel_view(app,id_specie)
     return render_template(template, **context)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
