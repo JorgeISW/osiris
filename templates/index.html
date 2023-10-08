@@ -35,7 +35,7 @@
                 <div class="row">
                       {% for planeta in planetas %}
                             {% if planeta.9 %}
-                        <div class="col">
+                        <div class="col mt-5">
                             <a href="{{ url_for('index', main_planet=planeta.0 - 1) }}">
                             <div class="card custom-card w-1 h-1 planet-card">
                                 <img src="{{ url_for('static', filename='img/' ~ planeta.9) }}" alt="{{ planeta.1 }}" class="planet-img">

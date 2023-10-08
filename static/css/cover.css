@@ -67,14 +67,9 @@ body {
     cursor: pointer;
     min-height: 180px;
     max-height: 200px;
-<<<<<<< HEAD
     background-color: #1f2122;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra predeterminada */
     color: #f1f3d5;
-}
-
-
-=======
     background-color: #1F2122;
     box-shadow: 0 4px 8px rgba(100, 50, 150, 0.4); /* Sombra predeterminada */
     color: #F1F3D5;
@@ -83,14 +78,11 @@ body {
 .planet-card {
     margin: -15px 0;
 }
->>>>>>> 9ac89541ce25e27f2a5698f56582d06ace592c91
 
 .custom-card:hover {
     transform: translateY(-35px);
     box-shadow: 0 8px 30px rgba(38, 100, 150, 0.8);
 }
-
-.
 
 .custom-card .planet-img {
     max-width: 90%;

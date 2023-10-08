@@ -4,12 +4,9 @@ from views.index import index_view
 from views.organism import organism_view
 from views.destinations import destinations_view
 from views.itinerary import itinerary_view
-<<<<<<< HEAD
-from views.travel import travel_view
-=======
+#from views.travel import travel_view
 from views.passport import passport_view
 
->>>>>>> 9ac89541ce25e27f2a5698f56582d06ace592c91
 
 import bd_connector
 
@@ -50,12 +47,12 @@ def destinations():
 def itinerary():
     template, context = itinerary_view(app)
     return render_template(template, **context)
-
+"""
 @app.route('/travel/<int:id_specie>')
 def travel(id_specie):
     template, context = travel_view(app,id_specie)
     return render_template(template, **context)
-
+"""
 @app.route('/passport/<int:id_spece>')
 def passport(id_spece):
     template, context = passport_view(app, id_spece)
