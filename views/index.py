@@ -4,8 +4,8 @@ def index_view(db_conn):
     context = {}
 
     with db_conn.connection.cursor() as cur:
-        cur.execute("SELECT organismo FROM organismos")
-        organismos = cur.fetchall()
-        context['organismos'] = organismos
+        cur.execute("SELECT * FROM planetas")
+        planetas = cur.fetchall()
+        context['planetas'] = planetas
 
     return template, context
