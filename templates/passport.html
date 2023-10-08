@@ -71,17 +71,18 @@
 </head>
 <body>
 	<style>
-		.cuadro_blanco{
+		.fondo{
 			width:1200px;
-			height:450px;
-			background-color: white;
 			border-radius: 50px;
 			position: absolute;
 			top:150px;
-			left:150px;
+			left:170px;
 		}
 	</style>
-	<div class="cuadro_blanco"></div>
+	<!--div class="cuadro_blanco"></div-->
+	<div id="fondo">
+		<img src="{{ url_for('static', filename='img/Fondo_Passport.svg') }}" alt="fondo"class="fondo">
+	</div>
     <header>
         <div id="logo">
             <img src="{{ url_for('static', filename='img/Logo_blanco.svg') }}" alt="logo"width="200" style="display: block; margin: 0 auto;">
