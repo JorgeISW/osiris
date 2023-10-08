@@ -1,64 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    	<title>
-        	Passport
-    	</title>
+{% extends 'layout.html' %}
+
+{% block title %}
+	Passport
+{% endblock %}
+
+{% block head %}
 	<style>
 		body{
 			background: black;
 		}
 		.font1{
-			font-size: 40px;
+			font-size: 1.4em;
+			color: black;
 		}
-		.pos0{
-			position: absolute;
-			top: 170px;
-			left:200px;
-			border-radius:20px;
-		}
-		.pos1{
-			position: absolute;
-			top:150px;
-			left: 500px;
-		}
-		.pos1_5{
-			position: absolute;
-			top:150px;
-			left: 900px;
-		}
-		.pos2{
-			position: absolute;
-			top: 200px;
-			left: 500px;
-		}
-		.pos3{
-			position: absolute;
-			top: 200px;
-			left: 900px;
-		}
-		.pos4{
-			position: absolute;
-			top:250px;
-			left:500px;
-		}
-		.pos5{
-			position: absolute;
-			top:250px;
-			left:900px;
-		}
-		.pos6{
-			position: absolute;
-			top:300px;
-			left:500px;
-		}
-		.pos6_5{
-			position: absolute;
-			top:300px;
-			left:900px;
+		.photo {
+			border-radius: 20px;
 		}
 	</style>
 	<style>
@@ -68,32 +24,32 @@
 			left:380px;
 		}
 	</style>
-</head>
-<body>
 	<style>
 		.fondo_blanco{
-			width:1197px;
-			height:500px;
-			background-color:white;
+			background-image: url('../static/img/Fondo_Passport.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
 			border-radius:50px;
-			position: absolute;
-			top:600px;
-			left:171px;
+			padding: 20px 0 20px 0;
 		}
 		.fondo{
 			width:1200px;
 			border-radius: 50px;
-			position: absolute;
-			top:150px;
-			left:170px;
+			top:10px;
+			left:10px;
 		}
 		.texto{
 			width:75%;
-			position: absolute;
-			top:700px;
-			left:200px;
+			top:10px;
+			left:10px;
 		}
-	</style>
+
+	.pos_clave{
+		font-size: 1.1em;
+	}
+    </style>
+{% endblock %}
 	<div class="fondo_blanco"></div>
 	<div class="texto">
 		<p>{{description}}</p>
@@ -101,119 +57,55 @@
 	<div id="fondo">
 		<img src="{{ url_for('static', filename='img/Fondo_Passport.svg') }}" alt="fondo"class="fondo">
 	</div>
-    <header>
-        <div id="logo">
-            <img src="{{ url_for('static', filename='img/Logo_blanco.svg') }}" alt="logo"width="200" style="display: block; margin: 0 auto;">
-            <h1  style="text-align: center; font-size: 50px; color: white">PASSPORT</h1>
-	</div>
-	<div id="moon">
-		<img src="{{ url_for('static', filename='img/moon.png') }}" alt="moon"width="160" class="pos_moon">
-	</div>
 
-    </header>
-    <style>
-	.posweig{
-		position: absolute;
-		top:400px;
-		left:200px;
-	}
-	.posliq{
-		position: absolute;
-		top:450px;
-		left:200px;
-	}
-	.postem{
-		position: absolute;
-		top:500px;
-		left:200px;
-	}
-	.posweig_{
-		position: absolute;
-		top:400px;
-		left:650px;
-	}
-	.posliq_{
-		position: absolute;
-		top:450px;
-		left:650px;
-	}
-	.postem_{
-		position: absolute;
-		top:500px;
-		left:650px;
-	}
-	.pospres{
-		position: absolute;
-		top:400px;
-		left:800px;
-	}
-	.poshab{
-		position: absolute;
-		top:450px;
-		left:800px;
-	}
-	.posres{
-		position: absolute;
-		top:500px;
-		left:800px;
-	}
-	.pospres_{
-		position: absolute;
-		top:400px;
-		left:1100px;
-	}
-	.poshab_{
-		position: absolute;
-		top:450px;
-		left:1100px;
-	}
-	.posres_{
-		position: absolute;
-		top:500px;
-		left:1100px;
-	}
+    {% block header %}
+		<div id="moon">
+			<img src="{{ url_for('static', filename='img/moon.png') }}" alt="moon"width="160" class="pos_moon">
+		</div>
+    {% endblock %}
 
-    </style>
-    <div id="content">
-	    <div id="perfil">
-		    <img src="{{ url_for('static', filename='img/Guillermo.jpg') }}" alt="perfil" width="200"class="pos0">
+	{% block box %}
+    <div id="content" class="font1 m-auto fondo_blanco mt-2">
+		<div class="row ms-4">
+			<div id="perfil" class="col-lg-3">
+				<img src="{{ url_for('static', filename='img/' ~ passport.10 ) }}" alt="perfil" width="200" class="photo">
+			</div>
+			{% if error %}
+				<p>{{ error }}</p>
+			{% else %}
+				<div class="col-lg-2 mt-5 text-start">
+					<div class="pos1"> <p>Name:</p> </div>
+					<div class="pos2"> <p>Scientific Name:</p> </div>
+				</div>
+				<div class="col-lg-2 mt-5 text-start">
+					<div class="pos1_5"> <p>{{ passport.1 }}</p> </div>
+					<div class="pos3"> <p>{{ passport.2 }}</p> </div>
+				</div>
+		<div class="row text-start mt-4 ms-4">
+			<div class="col-lg-3">
+				<div class="posweig"> <p>Weight:</p> </div>
+				<div class="posliq"> <p>Liquid Percentage:</p> </div>
+				<div class="postem"> <p>Temperature:</p> </div>
+			</div>
+			<div class="col-lg-3">
+				<div class="posweig_"> <p>{{ passport.3 }}</p> </div>
+				<div class="posliq_"> <p>{{ passport.4 }}</p> </div>
+				<div class="postem_"> <p>{{ passport.5 }}</p> </div>
+			</div>
+			<div class="col-lg-3">
+				<div class="pospres"> <p>Press:</p> </div>
+				<div class="poshab"> <p>Habitat:</p> </div>
+				<div class="posres"> <p>Respiration:</p> </div>
+			</div>
+			<div class="col-lg-3">
+				<div class="pospres_"> <p>{{ passport.6 }}</p> </div>
+				<div class="poshab_"> <p>{{ passport.7 }}</p> </div>
+				<div class="posres_"> <p>{{ passport.8 }}</p> </div>
+			</div>
 	    </div>
-	    <div class="font1">
-		    <div class="pos1"> <p>Name:</p> </div>
-		    <div class="pos1_5"> <p>{{name}}</p> </div>
-		    <div class="pos2"> <p>Age:</p> </div>
-		    <div class="pos3"> <p>{{age}}</p> </div>
-		    <div class="pos4"> <p>Scientific Name:</p> </div>
-		    <div class="pos5"> <p>{{sc_name}}</p> </div>
-		    <div class="pos6"> <p>Life Time:</p> </div>
-		    <div class="pos6_5"> <p>{{life}}</p> </div>
-
-		    <div class="posweig"> <p>Weight:</p> </div>
-		    <div class="posliq"> <p>Liquid Percentage:</p> </div>
-		    <div class="postem"> <p>Temperature:</p> </div>
-		    <div class="pospres"> <p>Press:</p> </div>
-		    <div class="poshab"> <p>Habitat:</p> </div>
-		    <div class="posres"> <p>Respiration:</p> </div>
-
-		    <div class="posweig_"> <p>{{weight}}</p> </div>
-		    <div class="posliq_"> <p>{{liq}}</p> </div>
-		    <div class="postem_"> <p>{{temp}}</p> </div>
-		    <div class="pospres_"> <p>{{press}}</p> </div>
-		    <div class="poshab_"> <p>{{hab}}</p> </div>
-		    <div class="posres_"> <p>{{resp}}</p> </div>
-	    </div>
+		{% endif %}
     </div>
-    <style>
-	.pos_clave{
-		position: absolute;
-		top: 600px;
-		left: 200px;
-		font-size: 30px;
-	}
-    </style>
     <div class="pos_clave">
-	    <p>&lt;&lt;P&gt;&gt;/&lt;&lt;{{Name}}&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;{{rand}}##################</p>
+	    <p>&lt;&lt;{{ passport.1 }}&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;{{rand}}################</p>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html>
+	{% endblock %}
