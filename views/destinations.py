@@ -1,5 +1,7 @@
+import bd_connector
 
-def destinations_view(db_conn):
+
+def destinations_view(app):
     template = 'destinations.html'
     x = 0
     y = 0

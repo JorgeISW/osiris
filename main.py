@@ -4,34 +4,35 @@ from views.organism import organism_view
 from views.destinations import destinations_view
 from views.itinerary import itinerary_view
 
+
 import bd_connector
 
 
 app = Flask(__name__)
-db_conn = bd_connector.connect(app)
-
+#db_conn = bd_connector.connect(app)
+ 
 
 @app.route('/')
 def index():
-    template, context = index_view(db_conn)
+    template, context = index_view(app)
     return render_template(template, **context)
 
 
 @app.route('/organism')
 def organism():
-    template, context = organism_view(db_conn)
+    template, context = organism_view(app)
     return render_template(template, **context)
 
 
 @app.route('/destinations')
 def destinations():
-    template, context = destinations_view(db_conn)
+    template, context = destinations_view(app)
     return render_template(template, **context)
 
 
 @app.route('/itinerary')
 def itinerary():
-    template, context = itinerary_view(db_conn)
+    template, context = itinerary_view(app)
     return render_template(template, **context)
 
 

@@ -1,9 +1,11 @@
+import bd_connector
 
-def organism_view(db_conn):
+
+def organism_view(app):
     template = 'organism.html'
     context = {}
 
-    with db_conn.connection.cursor() as cur:
+    with bd_connector.connect(app).cursor() as cur:
         cur.execute("SELECT organismo FROM organismos")
         organismos = cur.fetchall()
         context['organismos'] = organismos
