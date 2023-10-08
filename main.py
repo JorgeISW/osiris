@@ -1,23 +1,18 @@
-from flask import Flask, redirect, url_for, render_template
-from datetime import datetime
 import random
+from flask import Flask, render_template
+from views.index import index_view
+from views.organism import organism_view
+from views.destinations import destinations_view
+from views.itinerary import itinerary_view
+
+
+import bd_connector
 
 
 app = Flask(__name__)
+#db_conn = bd_connector.connect(app)
+ 
 
-
-@app.context_processor
-def date_now():
-    return {
-        'now': datetime.utcnow()
-    }
-
-
-@app.route('/')
-def index():
-    age = 26
-    people = ['Jorge', 'Luis', 'Osvaldo', 'Ale']
-    return render_template('layout.html', age=age, people=people)
 
 @app.route('/passport')
 def passport():
@@ -37,6 +32,28 @@ def passport():
     rand = random.randint(456787654567,987678987898);
     return render_template('passport.html', age=age, life=life, name=name, sc_name=sc_name, weight=weight,liq=liq,temp=temp,press=press,hab=hab,resp=resp,rand=rand, description=description)
 
+@app.route('/')
+def index():
+    template, context = index_view(app)
+    return render_template(template, **context)
+
+
+@app.route('/organism')
+def organism():
+    template, context = organism_view(app)
+    return render_template(template, **context)
+
+
+@app.route('/destinations')
+def destinations():
+    template, context = destinations_view(app)
+    return render_template(template, **context)
+
+
+@app.route('/itinerary')
+def itinerary():
+    template, context = itinerary_view(app)
+    return render_template(template, **context)
 
 
 if __name__ == '__main__':

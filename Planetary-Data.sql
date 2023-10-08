@@ -1,16 +1,16 @@
-CREATE TABLE PlanetaryData (
+CREATE TABLE organismos (
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    Organismo VARCHAR(255),
-    Nombre_cientifico VARCHAR(255),
-    Peso_promedio VARCHAR(255),
-    Porcentaje_liquido VARCHAR(255),
-    Temperatura VARCHAR(255),
-    Presion VARCHAR(255),
-    Tipo_de_habitat VARCHAR(255),
-    Tipo_de_respiracion VARCHAR(255)
+    organismo VARCHAR(255),
+    nombre_cientifico VARCHAR(255),
+    peso_promedio VARCHAR(255),
+    porcentaje_liquido VARCHAR(255),
+    temperatura VARCHAR(255),
+    presion VARCHAR(255),
+    tipo_de_habitat VARCHAR(255),
+    tipo_de_respiracion VARCHAR(255)
 );
 
-INSERT INTO Organismos (Organismo, Nombre_cientifico, Peso_promedio, Porcentaje_liquido, Temperatura, Presion, Tipo_de_habitat, Tipo_de_respiracion)
+INSERT INTO organismos (organismo, nombre_cientifico, peso_promedio, porcentaje_liquido, temperatura, presion, tipo_de_habitat, tipo_de_respiracion)
 VALUES
     ('Humano', 'Homo sapiens', '50 a 100 kilogramos', '60% a 65%', '22°C a 37°C', '1 atm', 'Terrestre', 'Aerobio'),
     ('Oso de agua', 'Tardigrada', 'No definido', 'No definido', '-273°C a 150°C', 'Hasta 6000 atm', 'Terrestre y Acuático', 'Aerobio y Anaerobio'),
