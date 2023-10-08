@@ -3,7 +3,7 @@ from views.index import index_view
 from views.organism import organism_view
 from views.destinations import destinations_view
 from views.itinerary import itinerary_view
-
+from views.travel import travel_view
 
 import bd_connector
 
@@ -16,7 +16,6 @@ app = Flask(__name__)
 def index():
     template, context = index_view(app)
     return render_template(template, **context)
-
 
 @app.route('/organism')
 def organism():
@@ -33,6 +32,11 @@ def destinations():
 @app.route('/itinerary')
 def itinerary():
     template, context = itinerary_view(app)
+    return render_template(template, **context)
+
+@app.route('/travel')
+def travel():
+    template, context = travel_view(app)
     return render_template(template, **context)
 
 
