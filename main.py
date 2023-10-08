@@ -16,8 +16,9 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    template, context = index_view(app)
+@app.route('/<int:main_planet>')
+def index(main_planet=0):
+    template, context = index_view(app, main_planet)
     return render_template(template, **context)
 
 
