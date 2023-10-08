@@ -6,8 +6,8 @@ def index_view(app):
     context = {}
 
     with bd_connector.connect(app).cursor() as cur:
-        cur.execute("SELECT organismo FROM organismos")
-        organismos = cur.fetchall()
-        context['organismos'] = organismos
+        cur.execute("SELECT * FROM planetas")
+        planetas = cur.fetchall()
+        context['planetas'] = planetas
 
     return template, context
