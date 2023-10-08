@@ -5,5 +5,9 @@
 {% endblock %}
 
 {% block box %}
-
+    <ul>
+    {% for organismo in organismos %}
+        <li>{{ organismo.0 }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
