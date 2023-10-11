@@ -6,9 +6,8 @@ def organism_view(app):
     context = {}
 
     with bd_connector.connect(app).cursor() as cur:
-        cur.execute("SELECT Organismo FROM organism	")
-        cur.execute("SELECT organism FROM organism")
+        cur.execute("SELECT * FROM organism")
         organismos = cur.fetchall()
-        context['Organismos'] = organismos
+        context['organismos'] = organismos
 
     return template, context

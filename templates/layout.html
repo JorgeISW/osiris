@@ -18,7 +18,9 @@
             <div class="container">
 
               <div class="float-md-start">
-                  <img alt="Osiris" class="logo" src="{{ url_for('static', filename='img/Logo_blanco.svg') }}">
+                  <a href="{{ url_for('index') }}">
+                    <img alt="Osiris" class="logo" src="{{ url_for('static', filename='img/Logo_blanco.svg') }}">
+                  </a>
               </div>
                 <div class="">
                     <ul class="navbar-nav ml-auto">
@@ -26,7 +28,7 @@
                             <a class="nav-link" href="{{ url_for('organism') }}">Organisms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('destinations') }}">Out Destinations</a>
+                            <a class="nav-link" href="{{ url_for('index') }}">Out Destinations</a>
                         </li>
                     </ul>
                 </div>

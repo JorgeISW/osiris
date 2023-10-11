@@ -8,6 +8,9 @@
 /*
  * Base structure
  */
+a {
+    text-decoration: none;
+}
 
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
@@ -63,4 +66,15 @@ opacity: 0.2;
 
 .planet-img{
 max-width: 40 px;
+}
+/*
+* Organisms cards
+*/
+.organisms-card{
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.organisms-card:hover{
+    transform: scale(0.95);
 }
