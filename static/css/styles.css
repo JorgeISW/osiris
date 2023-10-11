@@ -64,3 +64,16 @@ opacity: 0.2;
 .planet-img{
 max-width: 40 px;
 }
+
+.custom-card {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  min-height: 180px;
+  max-height: 200px;
+  background-color: #1f2122;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra predeterminada */
+  color: #f1f3d5;
+  background-color: #1F2122;
+  box-shadow: 0 4px 8px rgba(100, 50, 150, 0.4); /* Sombra predeterminada */
+  color: #F1F3D5;
+}

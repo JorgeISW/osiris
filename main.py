@@ -4,15 +4,13 @@ from views.index import index_view
 from views.organism import organism_view
 from views.destinations import destinations_view
 from views.itinerary import itinerary_view
-#from views.travel import travel_view
+from views.travel import travel_view
 from views.passport import passport_view
-
 
 import bd_connector
 
-
 app = Flask(__name__)
-#db_conn = bd_connector.connect(app)
+db_conn = bd_connector.connect(app)
  
 
 
@@ -47,12 +45,14 @@ def destinations():
 def itinerary():
     template, context = itinerary_view(app)
     return render_template(template, **context)
-"""
+
+
 @app.route('/travel/<int:id_specie>')
 def travel(id_specie):
     template, context = travel_view(app,id_specie)
     return render_template(template, **context)
-"""
+
+
 @app.route('/passport/<int:id_spece>')
 def passport(id_spece):
     template, context = passport_view(app, id_spece)
