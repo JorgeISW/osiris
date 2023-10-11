@@ -97,14 +97,17 @@
 		<div class="pos_backplaneta"></div>
 		<div id="planeta"class="pos_planeta">
 			<img src="{{ url_for('static', filename='img/' ~ planeta.4) }}" alt="planeta"width="400" style="display: block; margin: 0 auto;">
+			<img src="{{ url_for('static', filename='img/' ~ planeta.4) }}" alt="planeta"width="400" style="display: block; margin: 0 auto;">
 		</div>
 		<div class="font1">
 			<div class="pos_name"style="color:black;"><p>Destination:</p></div>
 			<div class="pos_name_"style="color:black;"><p>{{planeta.1}}</p></div>
 			<div class="pos_distance"style="color:black;"><p>Distance:</p></div>
 			<div class="pos_distance_"style="color:black;"><p>{{planeta.2}}</p></div>
+			<div class="pos_distance_"style="color:black;"><p>{{ planeta.2 }}</p></div>
 			<div class="pos_time"style="color:black"><p>Approximate Time:</p></div>
 			<div class="pos_time_"style="color:black"><p>{{planeta.3}}</p></div>
+			<div class="pos_time_"style="color:black"><p>{{ planeta.3 }}</p></div>
 			<div class="pos_warning"style="color:yellow;"><p>Warning:</p></div>
 			<div class="pos_warning_"style="font-size:30px;"><p>{{planeta.4}}</p></div>
 			<div class="pos_equipaje"><p>Recommended Resources:</p></div>

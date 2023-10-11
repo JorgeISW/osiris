@@ -1,7 +1,9 @@
 /*
  * Globals
  */
-
+a {
+    text-decoration: none;
+}
 
 /* Custom default button */
 .btn-light,
@@ -104,3 +106,34 @@ body {
 .custom-card .card-title {
     text-align: center;
 }
+
+/*
+* Organisms cards
+*/
+.organisms-card{
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.organisms-card:hover{
+    transform: scale(0.95);
+}
+
+/* Div que aparece para los organismos
+#miDiv {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    top: 50px;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+}
+
+.oculto {
+    display: none;
+}
+*/
